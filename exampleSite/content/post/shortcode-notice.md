@@ -11,63 +11,63 @@ categories: ["docs", "shortcodes", "index"]
 `Note` example:
 
 ```shortcode
-{{%/* notice note */%}}
+{{< notice note >}}
 A notice disclaimer
-{{%/* /notice */%}}
+{{< /notice >}}
 ```
 
 **Result:**
-{{% notice note %}}
+{{< notice note >}}
 A notice disclaimer
-{{% /notice %}}
+{{< /notice >}}
 
 
 You could **custom title** :
 
 
 ```shortcode
-{{%/* notice note 笔记 */%}}
+{{< notice note 笔记 >}}
 A notice disclaimer
-{{%/* /notice */%}}
+{{< /notice >}}
 ```
 
-{{% notice note 笔记 %}}
+{{< notice note 笔记 >}}
 A notice disclaimer
-{{% /notice %}}
+{{< /notice >}}
 
 
 ## tip
 
 ```shortcode
-{{%/* notice tip */%}}
+{{< notice tip >}}
 A tip disclaimer
-{{%/* /tip */%}}
+{{< /notice >}}
 ```
 
-{{% notice tip %}}
+{{< notice tip >}}
 A tip disclaimer
-{{% /notice %}}
+{{< /notice >}}
 
 
 ## info
 ```shortcode
-{{%/* notice info */%}}
+{{< notice info >}}
 A info disclaimer
-{{%/* /notice */%}}
+{{< /notice >}}
 ```
 
-{{% notice info %}}
+{{< notice info >}}
 An information disclaimer
-{{% /notice %}}
+{{< /notice >}}
 
 
 ## warning
 ```shortcode
-{{%/* notice warning */%}}
+{{< notice warning >}}
 A warning disclaimer
-{{%/* /notice */%}}
+{{< /notice >}}
 ```
 
-{{% notice warning %}}
+{{< notice warning >}}
 An warning disclaimer
-{{% /notice %}}
+{{< /notice >}}
