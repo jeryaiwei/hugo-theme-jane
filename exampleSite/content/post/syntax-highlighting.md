@@ -113,7 +113,7 @@ print("Hello, World!")
 
 ## no named code block
 
-```
+```shell
 ## this is a comment
 $ echo this is a command
 this is a command
@@ -138,7 +138,6 @@ title = "creating a new theme"
 bah and humbug
 $
 ```
-
 
 ## highlight shortcode
 
