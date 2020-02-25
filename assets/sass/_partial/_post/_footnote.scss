@@ -6,6 +6,9 @@
     border-style: solid;
     color: rgb(221, 221, 221);
   }
+  p {
+    display: inline;
+  }
 }
 
 .footnote-ref {
@@ -30,7 +33,17 @@
     }
   }
 }
+a.footnote-ref {
+  font-weight: 700;
 
+  &::after {
+    content: ']';
+  }
+
+  &::before {
+    content: '[';
+  }
+}
 .fn-content {
   position: absolute;
   display: inline-block;

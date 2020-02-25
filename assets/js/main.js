@@ -153,7 +153,7 @@ var headerAnchor = function() {
  */
 var fnTooltip = function () {
   $(".footnote-ref").each(function () {
-
+    // var id = $(this).children("a").attr("href").substr(1),
     var id = $(this).attr("href").substr(1),
       footnote = $(document.getElementById(id)).clone(),
       outer_wrapper = $("<span>", { "class": "fn-content" }),
@@ -190,9 +190,41 @@ var highlight = function () {
     .forEach((element) => {
       const sub = element.querySelector('code[data-lang]');
       if (sub !== null) {
-        element.setAttribute('data-lang', mapLang(sub.getAttribute('data-lang')));
+        var name = sub.getAttribute('data-lang');
+         name = name.toLocaleLowerCase() === 'fallback' ? '' : name;
+        element.setAttribute('data-lang', name);// mapLang(sub.getAttribute('data-lang')));
       }
     });
+}
+
+var chart = function () {
+  if (!window.flowchart) return;
+
+  const blocks = document.querySelectorAll('.language-flowchart');
+  for (let i = 0; i < blocks.length; i++) {
+    const block = $(blocks[i]);
+    id = 'js-flowchart-diagrams-${i}';
+    block.attr("id", id);
+    block.addClass("align-center");
+    const diagram = flowchart.parse(block.attr("flowchart-data"));
+    diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
+  }
+}
+
+var sequence = function () {
+  if (!window.Diagram) return;
+
+  const blocks = document.querySelectorAll('.language-sequence');
+  for (let i = 0; i < blocks.length; i++) {
+    const block = $(blocks[i]);
+    var id = `js-sequence-diagrams-${i}`;
+    block.attr("id",id);
+    block.addClass("align-center");
+    const diagram = Diagram.parse(block.attr("sequence-data"));
+    diagram.drawSVG(id, window.sequenceDiagramsOptions
+      ? window.sequenceDiagramsOptions
+      : { theme: 'simple' });
+  }
 }
 
 function mapLang(name) {
@@ -224,6 +256,8 @@ $(document).ready(function () {
   toc();
   headerAnchor();
   fnTooltip();
+  sequence();
+  chart();
 });
 
 highlight();
